@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Coaches Page</h1>
+<p>Welcome！
+<p><a href="/profile">Edit Profile</a> | <a href="/logout">Logout</a></p>
+<p style="color: red;">{{error}}</p>
+<table border="1">
+    <tr>
+        <th>coach plan id</th>
+        <th>coach name</th>
+        <th>height</th>
+        <th>weight</th>
+        <th>age</th>
+                            <!--change-->
+    </tr>
+    {%for fridge in fridges%}
+        <tr>
+            <td>{{coaches.coach_id}}</td>
+            <td>{{coaches.name}}</td>
+            <td>{{coaches.height}}</td>
+            <td>{{coaches.weight}}</td>
+            <td>{{coaches.age}}</td>
+        </tr>
+    {%endfor%}
+</table>
+</form>
+</body>
+</html>
+
+
+
+<!--注释内容-->
