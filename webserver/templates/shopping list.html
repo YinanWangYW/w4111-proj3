@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Shopping List Page</h1>
+<p><a href="/dashboard">Dashboard</a> | <a href={{"/fridge/{}".format(fid)}}>Back</a>
+<p style="color: red;">{{error}}</p>
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Amount</th>
+        <th>Unit</th>
+        <th>Price</th>
+        <th>Store</th>
+        <th>Category</th>
+        <th>Expiry</th>
+    </tr>
+    {%for row in data%}
+        <tr>
+            {%for col in row%}
+                <td>{{col}}</td>
+            {%endfor%}
+        </tr>
+    {%endfor%}
+</table>
+</body>
+</html>
