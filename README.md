@@ -1,0 +1,1 @@
+This project designed a way to get fitness through exercising and diet.
