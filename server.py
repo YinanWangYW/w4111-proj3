@@ -299,10 +299,10 @@ def judgecalorie():
 def dietplanpage():
     print(request.args)
     dietplan = []
-    # diet_plan = {}       # 必须放在循环里初始化列表
+    # diet_plan = {}      
     cursor = g.conn.execute("SELECT * FROM diet_plan")
     for row in cursor:
-        diet_plan = {}     #一定要放这里！！！！  不然最后append结束后列表所有元素都一样，都是一个字典
+        diet_plan = {}     
         n = 0
         diet_plan['diet_plan_id'] = row['diet_plan_id']
         diet_plan['diet_plan_name'] = row['diet_plan_name']
@@ -328,10 +328,10 @@ def dietplanpage():
 def fitnessplanpage():
     print(request.args)
     fitnessplan = []
-    # fitness_plan = {}       # 必须放在循环里初始化列表
+    # fitness_plan = {}     
     cursor = g.conn.execute("SELECT * FROM fitness_plan")
     for row in cursor:
-        fitness_plan = {}     #一定要放这里！！！！  不然最后append结束后列表所有元素都一样，都是一个字典
+        fitness_plan = {}     
         fitness_plan['fitness_plan_id'] = row['fitness_plan_id']
         fitness_plan['fitness_plan_name'] = row['fitness_plan_name']
         fitness_plan['days_in_week'] = row['days_in_week']
@@ -347,10 +347,10 @@ def fitnessplanpage():
 
 
     coachplan = []
-    # fitness_plan = {}       # 必须放在循环里初始化列表
+    # fitness_plan = {}      
     cursor = g.conn.execute("SELECT * FROM coaches_provide")
     for row in cursor:
-        coach_plan = {}     #一定要放这里！！！！  不然最后append结束后列表所有元素都一样，都是一个字典
+        coach_plan = {}     
         coach_plan['coach_id'] = row['coach_id']
         coach_plan['name'] = row['name']
         coach_plan['height'] = row['height']
