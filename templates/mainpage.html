@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Dashboard</h1>
+<p>HELLO, {{name}} </p>
+
+
+<form method="POST" action="/logoutpage">
+    <input type="submit" value="Log out">
+</form>
+
+<br><br>
+<h3><STRONG>Click <a href="/dietplanpage">here</a> to see DIET-PLAN we provide.</STRONG></h3>
+<h3><STRONG>Click <a href="/fitnessplanpage">here</a> to see Fitness-PLAN we provide.</STRONG></h3>
+
+<br><br>
+
+<h3>Choose your own plans.</h3>
+<p>Type diet-id and fitness-id here to select the plans you prefer</p>
+
+<form method="POST" action="/planselection">
+    <p>diet plan id <input type="text" name="diet_plan_id" required></p>
+    <p>fitness plan id <input type="text" name="fitness_plan_id" required></p>
+
+    <p>And also type the start and end date you want.</p>
+    <p>plan duration <input type="text" name="plan_duration" required></p>
+
+    <p>And also choose the coach id.</p>
+    <p>coach id <input type="text" name="coach_id" required></p>
+
+    <p><input type="submit" value="submit"></p>
+</form>
+
+<br>
+
+<p>Your selected plan:</p>
+<table border="0">
+    <tr>
+        <th>selected-diet-plan-id &nbsp; &nbsp;&nbsp;&nbsp;</th>
+        <th>selected-fitness-plan-id &nbsp; &nbsp;&nbsp;&nbsp;</th>
+    </tr>
+    {%for id in data1%}
+        <tr>
+            <td>{{id['diet_plan_id']}}</td>
+            <td>{{id['fitness_plan_id']}}</td>
+        </tr>
+    {%endfor%}
+</table>
+
+<table border="0">
+    <tr>
+        <th>coach-id &nbsp; &nbsp;&nbsp;&nbsp;</th>
+        <th>plan-duration &nbsp; &nbsp;&nbsp;&nbsp;</th>
+    </tr>
+    {%for ids in data2%}
+        <tr>
+            <td>{{ids['coach_id']}}</td>
+            <td>{{ids['plan_duration']}}</td>
+        </tr>
+    {%endfor%}
+</table>
+
+<!--&lt;!&ndash; line1&ndash;&gt;-->
+<!--    <tr>-->
+<!--        <td>{{a}}</td>-->
+<!--        <td>{{b}}</td>-->
+<!--        <td>{{c}}</td>-->
+<!--        <td>{{d}}</td>-->
+<!--    </tr>-->
+
+<!--</table>-->
+
+<!--<div>-->
+<!--{% for n in diet_plan_ids %}-->
+<!--<div>{{n}}</div>-->
+<!--{% endfor %}-->
+<!--</div>-->
+
+<!--<div>-->
+<!--{% for n in fitness_plan_ids %}-->
+<!--<div>{{n}}</div>-->
+<!--{% endfor %}-->
+<!--</div>-->
+
+<!--<div>-->
+<!--{% for n in coach_plan_ids %}-->
+<!--<div>{{n}}</div>-->
+<!--{% endfor %}-->
+<!--</div>-->
+
+<!--<div>-->
+<!--{% for n in plan_durations %}-->
+<!--<div>{{n}}</div>-->
+<!--{% endfor %}-->
+<!--</div>-->
+
+
+
+<br><br>
+
+<form method="POST" action="/judgecalorie">
+    <h3>Here you can upload your actual calorie input and consumption.</h3>
+    <p>calorie input: <input type="text" name="calorie_input" required>kcal</p>
+    <p>calorie consumption: <input type="text" name="calorie_consumption" required>kcal</p>
+    <p><input type="submit" value="submit"></p>
+</form>
+
+<div>{{context}}</div>
+
+
+</body>
+</html>
