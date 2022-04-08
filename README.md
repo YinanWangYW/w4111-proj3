@@ -1,1 +1,2 @@
-This project designed a way to get fitness through exercising and diet.
+Nothing is useful here
+The program is in "master"
